@@ -9,11 +9,18 @@ public class MouseMover {
     public static final int MAX_X = 400;
 
     public static void main(String... args) throws Exception {
+        String a = "";
+        char c = 'a';
+
+        a= a+c;
+
         Robot robot = new Robot();
         Random random = new Random();
         while (true) {
             robot.mouseMove(random.nextInt(MAX_X), random.nextInt(MAX_Y));
             Thread.sleep(FIVE_SECONDS);
         }
+
+
     }
 }
