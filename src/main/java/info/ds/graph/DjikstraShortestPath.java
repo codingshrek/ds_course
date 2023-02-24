@@ -17,7 +17,7 @@ public class DjikstraShortestPath {
     }
 
     public static List<Integer> shortestPath(int n, int m, int edges[][]) {
-        Map<Integer,Pair> map = new HashMap<>(); //SC-> N
+        Map<Integer,Pair> parents = new HashMap<>(); //SC-> N
         PriorityQueue<Pair> q = new PriorityQueue<Pair>((x, y)->x.distance - y.distance); //passing comaprator
         //SC-> N
         List<List<Pair>> adj = new ArrayList<>(); //SC-> V+2E
@@ -40,7 +40,7 @@ public class DjikstraShortestPath {
 
         //initialize Queue and map
         q.offer(new Pair(1,0)); // 1->1 will always take 0 distance
-        map.put(1,new Pair(1,0)); //Parent of 1 is always 1, since it is starting point.
+        parents.put(1,new Pair(1,0)); //Parent of 1 is always 1, since it is starting point.
 
         //TC-> E log(N)
         while(!q.isEmpty()){
@@ -48,15 +48,15 @@ public class DjikstraShortestPath {
             List<Pair> adjacentNodes = adj.get(cur.node);
             for(Pair adjacentNode : adjacentNodes){
                 int newDistance = cur.distance + adjacentNode.distance;
-                if(map.get(adjacentNode.node)!=null){
+                if(parents.get(adjacentNode.node)!=null){
 
-                    if(map.get(adjacentNode.node).distance>newDistance){
-                        map.put(adjacentNode.node,new Pair(cur.node,newDistance));
+                    if(parents.get(adjacentNode.node).distance>newDistance){
+                        parents.put(adjacentNode.node,new Pair(cur.node,newDistance));
                         q.offer(new Pair(adjacentNode.node,newDistance));
                     }
                 }
                 else{
-                    map.put(adjacentNode.node,new Pair(cur.node,newDistance));
+                    parents.put(adjacentNode.node,new Pair(cur.node,newDistance));
                     q.offer(new Pair(adjacentNode.node,newDistance));
                 }
             }
@@ -68,13 +68,13 @@ public class DjikstraShortestPath {
         int tempParent = end;
         //Tc-> N
         while(true){
-            if(map.get(tempParent)==null) {
+            if(parents.get(tempParent)==null) {
                 result.add(-1);
                 return result;
             }
             else{
                 stack.push(tempParent);
-                tempParent=map.get(tempParent).node;
+                tempParent=parents.get(tempParent).node;
                 if(tempParent==1) break;
             }
         }

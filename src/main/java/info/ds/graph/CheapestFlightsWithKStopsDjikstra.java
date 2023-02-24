@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class CheapestFlightsWithKStops {
+public class CheapestFlightsWithKStopsDjikstra {
 
     public static class Tuple {
 
@@ -65,7 +65,9 @@ public class CheapestFlightsWithKStops {
 
 
         }
-
+        //In this case we are returning the answer after the full algo has run because we were storing values in q wrt to stops .
+        //Suppose dest is 2 and we have 2 values in q 2,2,10 and 2,3,7 (node,stops,cost). The next value picked up from heap will be. 2,2,10.
+        //Idea is we can get cheapest flights with more number of stops.
         return cost[dst]==Integer.MAX_VALUE?-1:cost[dst];
 
     }
