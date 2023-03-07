@@ -19,7 +19,7 @@ public class DisjointSet {
         rank = new ArrayList<>();
         parent = new ArrayList<>();
         //n is the number of vertices;
-        for (int i = 0; i < n+1; i++) {
+        for (int i = 0; i < n + 1; i++) {
             rank.add(0); //initial rank of every node is 0.
             size.add(1); //initially every node is single thus size having 1.
             parent.add(i); //initially every node is parent of himself.
@@ -47,17 +47,17 @@ public class DisjointSet {
         //when ultimate parents are same,nothing to be done.
         if (uParentU == uParentV) return;
         //Always join lower rank to higher rank
-        if (rank.get(u) > rank.get(v)) {
-            parent.set(v, u);
+        if (rank.get(uParentU) > rank.get(uParentV)) {
+            parent.set(uParentV, uParentU);
         }
         //This is the case where
-        else if (rank.get(v) > rank.get(u)) {
-            parent.set(u, v);
+        else if (rank.get(uParentV) > rank.get(uParentU)) {
+            parent.set(uParentU, uParentV);
         }
         //This is the case where ranks are same but ultimate parents are diff. That is two disjoints sets.
         //We can do either of the two operations  u->v or v->u.
         else {
-            parent.set(v, u);
+            parent.set(uParentV, uParentU);
             int rankU = rank.get(uParentU);
             rank.set(uParentU, rankU + 1);
         }
@@ -77,7 +77,7 @@ public class DisjointSet {
         }
     }
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         DisjointSet ds = new DisjointSet(7);
         ds.unionBySize(1, 2);
         ds.unionBySize(2, 3);
@@ -86,18 +86,21 @@ public class DisjointSet {
         ds.unionBySize(5, 6);
 
         // if 3 and 7 same or not
-        if(ds.findUParent(3) == ds.findUParent(7)) {
+        if (ds.findUParent(3) == ds.findUParent(7)) {
             System.out.println("Same");
-        }
-        else
+        } else
             System.out.println("Not Same");
 
         ds.unionBySize(3, 7);
-        if(ds.findUParent(3) == ds.findUParent(7)) {
+        if (ds.findUParent(3) == ds.findUParent(7)) {
             System.out.println("Same");
-        }
-        else
+        } else
             System.out.println("Not Same");
+    }
+
+    public int getSize(int node) {
+        int uParent = findUParent(node);
+        return this.size.get(uParent);
     }
 
 }

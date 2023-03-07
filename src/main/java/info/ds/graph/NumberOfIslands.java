@@ -22,24 +22,6 @@ public class NumberOfIslands {
             }
         }
 
-  /*      if (col < islands[row].length - 1 && islands[row][col + 1] != 0 && visited[row][col + 1] != true)
-            traverseNodes(row, col + 1, visited, islands); //go right
-        if (col >= 1 && islands[row][col - 1] != 0 && visited[row][col - 1] != true)
-            traverseNodes(row, col - 1, visited, islands); // go left
-        if (row >= 1 && islands[row - 1][col] != 0 && visited[row - 1][col] != true)
-            traverseNodes(row - 1, col, visited, islands); //go up
-        if (row < islands.length - 1 && islands[row + 1][col] != 0 && visited[row + 1][col] != true)
-            traverseNodes(row + 1, col, visited, islands);//go down
-
-        if (col < islands[row].length - 1 && row >= 1 && islands[row - 1][col + 1] != 0 && visited[row - 1][col + 1] != true)
-            traverseNodes(row - 1, col + 1, visited, islands); //go up right
-        if (col >= 1 && row >= 1 && islands[row - 1][col - 1] != 0 && visited[row - 1][col - 1] != true)
-            traverseNodes(row - 1, col - 1, visited, islands); // go up left
-        if (row < islands.length - 1 && col >= 1 && islands[row + 1][col - 1] != 0 && visited[row + 1][col - 1] != true)
-            traverseNodes(row + 1, col - 1, visited, islands);//go down left
-        if (row < islands.length - 1 && col < islands[row].length - 1 && islands[row + 1][col + 1] != 0 && visited[row + 1][col + 1] != true)
-            traverseNodes(row + 1, col + 1, visited, islands);//go down*/
-
 
     }
 

@@ -7,6 +7,13 @@ import java.util.TreeMap;
 
 public class MergeAccountsDisjointSet {
 
+    private static int getCellNumber(int curRow,int curCol,int cols){
+        return (curRow*cols)+curCol+1;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(MergeAccountsDisjointSet.getCellNumber(1,3,8));
+    }
     static List<List<String>> accountsMerge(List<List<String>> accounts) {
         int n = accounts.size();
         DisjointSet ds= new DisjointSet(n);
