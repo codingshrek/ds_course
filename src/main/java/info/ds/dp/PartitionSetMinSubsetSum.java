@@ -7,6 +7,8 @@ package info.ds.dp;
  * How to find the all possible values of s1? The dp table can be used. dp[n-1][i].
  * Min of |s1-s2| = min(|s1-(target-s1)|)
  */
+//DP16
+//https://amadeusworkplace-my.sharepoint.com/:o:/r/personal/akash_akash_amadeus_com/Documents/Notebooks/Akash%20@%20Work?d=w4081d6334036420fa830a6747ea25e79&csf=1&web=1&e=ho9bzQ
 public class PartitionSetMinSubsetSum {
 
     public static int minSubsetSumDifference(int[] arr, int n) {
@@ -23,7 +25,7 @@ public class PartitionSetMinSubsetSum {
         if(tSum>=arr[0]) dp[0][arr[0]]=true;
 
         for(int index = 1;index<n;index++){
-            for(int target =1 ;target<=tSum;target++){
+            for(int target =0 ;target<=tSum;target++){
                 boolean notTake = dp[index-1][target];
                 boolean take = false;
                 if(target>=arr[index]) take = dp[index-1][target-arr[index]];
