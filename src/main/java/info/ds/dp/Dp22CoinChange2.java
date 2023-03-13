@@ -1,6 +1,6 @@
 package info.ds.dp;
 
-public class CoinChange2Dp22 {
+public class Dp22CoinChange2 {
 
     public static long countWays(int index,int target,int[] dnm,long[][] dp){
 

@@ -1,8 +1,6 @@
 package info.ds.dp;
 
-import java.util.Arrays;
-
-public class UnboundedKnapsackDP22 {
+public class DP22UnboundedKnapsack {
 
     public static int uKnapsack(int index,int w,int[] profit,int[] weight,int[][] dp){
         if(index==0){

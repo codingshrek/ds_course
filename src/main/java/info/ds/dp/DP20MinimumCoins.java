@@ -1,6 +1,6 @@
 package info.ds.dp;
 
-public class MinimumCoinsDP20 {
+public class DP20MinimumCoins {
 
     private static int minimumElementsMemo(int index,int target,int num[],int[][] dp){
         if(index==0){

@@ -2,7 +2,7 @@ package info.ds.dp;
 
 import java.util.Arrays;
 
-public class TargetSumDp21 {
+public class DP21TargetSum {
 
     private static int targetSumMemo(int index, int target, int[] arr, int[][] dp) {
         if (index == 0) {

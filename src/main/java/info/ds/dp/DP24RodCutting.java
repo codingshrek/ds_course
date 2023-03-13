@@ -1,8 +1,6 @@
 package info.ds.dp;
 
-import java.util.Arrays;
-
-public class RodCuttingDp24 {
+public class DP24RodCutting {
 
     private static int cutRodMemo(int index,int length,int[] price,int[][] dp){
 

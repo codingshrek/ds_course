@@ -1,7 +1,7 @@
 package info.ds.dp;
 
 //Continuation to DP25 . In this question we need to print the subsequence.
-public class LongestCommonSubsequenceDP26 {
+public class DP26LongestCommonSubsequence {
 
     public static char[] printLongestCommonSubsequence(int n , int m , String s1, String s2){
         n = n+1;

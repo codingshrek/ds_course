@@ -2,7 +2,7 @@ package info.ds.dp;
 
 import java.util.Arrays;
 
-public class LongestCommonSubsequenceDP25 {
+public class DP25LongestCommonSubsequence {
 
     public static int lcsMemo(int i , int j , String s1, String s2,int[][] dp){
         //if(i<0||j<0) return 0; //not used just for explanation
