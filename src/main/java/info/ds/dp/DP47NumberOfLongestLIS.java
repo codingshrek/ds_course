@@ -1,6 +1,6 @@
 package info.ds.dp;
 
-public class DP48NumberOfLongestLIS {
+public class DP47NumberOfLongestLIS {
 
     public static int findNumberOfLIS(int n, int[] arr) {
 

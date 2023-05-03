@@ -1,4 +1,4 @@
-package info.ds.array_string.sliding_window;
+package info.ds.array.sw;
 
 /**
  * Leetcode 209.
