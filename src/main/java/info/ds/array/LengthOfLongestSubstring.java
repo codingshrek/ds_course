@@ -1,4 +1,4 @@
-package info.ds.array.sw;
+package info.ds.array;
 
 import java.util.HashSet;
 import java.util.Set;

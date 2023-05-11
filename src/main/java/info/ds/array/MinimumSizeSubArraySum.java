@@ -1,4 +1,4 @@
-package info.ds.array.sw;
+package info.ds.array;
 
 /**
  * Leetcode 209.
