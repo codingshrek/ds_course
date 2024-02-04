@@ -1,7 +1,6 @@
 package info.ds.tree.bst;
 
 import info.ds.tree.bt.leetcode.TreeNode;
-import sun.reflect.generics.tree.Tree;
 
 public class ConstructBSTFromPreorder {
 
