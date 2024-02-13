@@ -11,18 +11,18 @@ public class LevelOrderTraversal {
         while (!queue.isEmpty()) {
             int size = queue.size();
             List<BinaryTree.Node> nodes = new ArrayList<>();
-            for (int i = 0; i < size; i++) {
-                BinaryTree.Node currentNode = queue.poll();
-                if (currentNode.left != null) {
-                    queue.offer(currentNode.left);
-                }
+                for (int i = 0; i < size; i++) {
+                    BinaryTree.Node currentNode = queue.poll();
+                    if (currentNode.left != null) {
+                        queue.offer(currentNode.left);
+                    }
 
-                if (currentNode.right != null) {
-                    queue.offer(currentNode.right);
-                }
+                    if (currentNode.right != null) {
+                        queue.offer(currentNode.right);
+                    }
 
-                nodes.add(currentNode);
-            }
+                    nodes.add(currentNode);
+                }
             levelOrder.add(nodes);
         }
 
