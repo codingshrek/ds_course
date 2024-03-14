@@ -15,7 +15,7 @@ public class OccurrenceOfAnagrams {
 
         //Initializing map with all chars in pattern with its frequency.
         Map<Character, Integer> map = new HashMap<>();
-        Integer counter = 0;
+        Integer counter = 0; //number of distinct counter
         Integer res = 0;
         Integer n = txt.length();
         while (j < k) {
