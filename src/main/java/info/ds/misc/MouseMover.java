@@ -1,7 +1,8 @@
-package info.ds;
+package info.ds.misc;
 
 import java.awt.Robot;
 import java.util.Random;
+import java.util.Stack;
 
 public class MouseMover {
     public static final int FIVE_SECONDS = 5000;
@@ -9,10 +10,6 @@ public class MouseMover {
     public static final int MAX_X = 400;
 
     public static void main(String... args) throws Exception {
-        String a = "";
-        char c = 'a';
-
-        a= a+c;
 
         Robot robot = new Robot();
         Random random = new Random();
