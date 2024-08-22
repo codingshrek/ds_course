@@ -3,7 +3,7 @@ package info.ds.array;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LongestSubstringWithKDisctingChars {
+public class LongestSubstringWithKDistinctChars {
 
     public int longestkSubstr(String s, int k) {
         int n = s.length();

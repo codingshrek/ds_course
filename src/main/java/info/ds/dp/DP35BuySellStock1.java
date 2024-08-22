@@ -14,9 +14,7 @@ public class DP35BuySellStock1 {
             maxProfit = Math.max(profit,maxProfit);
             minPrice = Math.min(minPrice,prices.get(i)); //Keeping track of min buying price  from 0->i-1
         }
-
         return maxProfit;
-
     }
 }
 
