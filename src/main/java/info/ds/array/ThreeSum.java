@@ -5,37 +5,34 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ThreeSum {
-    public List<List<Integer>> threeSum(int[] nums) {
+    public static List< List < Integer > > triplet(int t, int []arr) {
 
-        int n = nums.length;
+        int n = arr.length;
+        int target = 0;
+        Arrays.sort(arr);
         List<List<Integer>> ans = new ArrayList<>();
-        Arrays.sort(nums);
-        for (int i = 0; i < n; i++) {
-            if (i != 0 && nums[i] == nums[i - 1]) continue;
-            int first = nums[i];
-            int left = i + 1;
-            int right = n - 1;
-            int sum = 0 - nums[i];
-            while (left < right) {
-                if (nums[left] + nums[right] == sum) {
-                    ArrayList<Integer> t = new ArrayList<>();
-                    t.add(first);
-                    t.add(nums[left]);
-                    t.add(nums[right]);
-                    ans.add(t);
-                    while (left < right && nums[left] == nums[left + 1]) left++;
-                    while (left < right && nums[right] == nums[right - 1]) right--;
-
-                    left++;
-                    right--;
-
-                } else if (nums[left] + nums[right] < sum) left++;
-                else right--;
-
+        for(int i=0;i<n;i++){
+            if(i!=0 && arr[i]==arr[i-1]) continue;
+            int j=i+1;
+            int k = n-1;
+            while(j<n && j<k){
+                int sum = arr[i]+arr[j]+arr[k];
+                if(sum == target){
+                    ans.add(Arrays.asList(arr[i],arr[j],arr[k]));
+                    j++;
+                    k--;
+                    while(j<k && arr[j]==arr[j-1])j++;
+                    while(k>j && arr[k]==arr[k+1])k--;
+                }
+                else if(sum<target)j++;
+                else if(sum>target)k--;
             }
-
         }
 
         return ans;
+    }
+
+    public static void main(String[] args) {
+        ThreeSum.triplet(5,new int[]{-1,-1,2,0,1}).stream().forEach(i-> System.out.println(i));
     }
 }

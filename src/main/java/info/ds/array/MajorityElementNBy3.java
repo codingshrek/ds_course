@@ -1,7 +1,5 @@
 package info.ds.array;
 
-import org.omg.CORBA.INTERNAL;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
